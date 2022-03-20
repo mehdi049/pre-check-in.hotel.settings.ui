@@ -4,7 +4,7 @@
 
     <div class="container">
       <div class="columns is-mobile">
-        <LeftNavbar currentActive="my-booking"></LeftNavbar>
+        <LeftNavbar currentActive="image-update"></LeftNavbar>
 
         <div class="column is-9">
           <div id="main-content">

@@ -16,51 +16,11 @@
         </li>
         <li>
           <router-link
-            to="/bbq-fun"
-            v-bind:class="{ active: this.currentActive === 'bbq-fun' }"
-            ><font-awesome-icon size="2x" :icon="['fas', 'burn']" /><span
+            to="/image-update"
+            v-bind:class="{ active: this.currentActive === 'image-update' }"
+            ><font-awesome-icon size="2x" :icon="['fas', 'image']" /><span
               class="is-hidden-mobile"
-              >&nbsp; BBQ fun</span
-            ></router-link
-          >
-        </li>
-        <li>
-          <router-link
-            to="/picnic-basket"
-            v-bind:class="{
-              active: this.currentActive === 'picnic-basket',
-            }"
-            ><font-awesome-icon
-              size="2x"
-              :icon="['fas', 'shopping-basket']"
-            /><span class="is-hidden-mobile"
-              >&nbsp; Picnic basket</span
-            ></router-link
-          >
-        </li>
-        <li>
-          <router-link
-            to="/dining-options"
-            v-bind:class="{
-              active: this.currentActive === 'dining-options',
-            }"
-            ><font-awesome-icon size="2x" :icon="['fas', 'utensils']" /><span
-              class="is-hidden-mobile"
-              >&nbsp; Dining options</span
-            ></router-link
-          >
-        </li>
-        <li>
-          <router-link
-            to="/holiday-check"
-            v-bind:class="{
-              active: this.currentActive === 'holiday-check',
-            }"
-            ><font-awesome-icon
-              size="2x"
-              :icon="['fas', 'check-double']"
-            /><span class="is-hidden-mobile"
-              >&nbsp; Holiday check</span
+              >&nbsp; Images update</span
             ></router-link
           >
         </li>
@@ -80,6 +40,7 @@ import {
   faCloud,
   faHotel,
   faCheckDouble,
+  faImage,
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookSquare } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -94,6 +55,7 @@ library.add(faCloud);
 library.add(faFacebookSquare);
 library.add(faHotel);
 library.add(faCheckDouble);
+library.add(faImage);
 
 export default {
   name: "LeftNavbar",

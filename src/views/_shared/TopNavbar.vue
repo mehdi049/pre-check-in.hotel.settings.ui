@@ -3,7 +3,7 @@
   <div class="container">
     <div id="h-menu" class="columns is-mobile">
       <div class="column">
-        <router-link to="/my-booking">
+        <router-link to="/settings">
           <img
             src="https://cdn3.vectorstock.com/i/1000x1000/88/47/royal-hotel-logo-vector-31948847.jpg"
             class="image is-48x48"
