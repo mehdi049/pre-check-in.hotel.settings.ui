@@ -6,8 +6,8 @@
       <ul class="menu-list">
         <li>
           <router-link
-            to="/my-booking"
-            v-bind:class="{ active: this.currentActive === 'my-booking' }"
+            to="/settings"
+            v-bind:class="{ active: this.currentActive === 'settings' }"
             ><font-awesome-icon size="2x" :icon="['fas', 'suitcase']" /><span
               class="is-hidden-mobile"
               >&nbsp; Hotel information</span

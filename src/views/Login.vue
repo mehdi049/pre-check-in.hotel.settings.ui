@@ -6,12 +6,12 @@
           <div
             class="column is-10-mobile is-6-tablet is-5-widescreen is-4-fullhd box"
           >
-            <b-field label="Hotel name">
+            <b-field label="Email">
               <b-input
                 type="text"
                 required="true"
-                placeholder="Hotel name"
-                v-model="signInModel.bookingReference"
+                placeholder="Email"
+                v-model="signInModel.email"
               ></b-input>
             </b-field>
 
@@ -20,7 +20,7 @@
                 placeholder="Password"
                 required="true"
                 type="password"
-                v-model="signInModel.lastname"
+                v-model="signInModel.password"
               ></b-input>
             </b-field>
 
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-//import * as functions from "./_sharedFunctions/functions.js";
+import * as functions from "./_sharedFunctions/functions.js";
 
 export default {
   name: "Login",
@@ -59,15 +59,13 @@ export default {
     return {
       locale: undefined, // Browser locale,
       signInModel: {
-        hotelName: "",
+        email: "",
         password: "",
       },
     };
   },
   methods: {
     authenticate: function() {
-      this.$router.push("/settings");
-      /*
       if (!this.validateForm()) {
         let _signIn = { ...this.signInModel };
         this.axios
@@ -78,12 +76,11 @@ export default {
           )
           .then((response) => {
             if (response.data.status === 200) {
-               let _booking = functions.setBooking(response.data.body);
+              functions.setHotelSettings(response.data.body);
               localStorage.setItem(
-                "booking_original",
+                "hotelSettings_original",
                 JSON.stringify(response.data.body)
               );
-              localStorage.setItem("booking", JSON.stringify(_booking));
               this.$router.push("/settings");
             } else {
               this.danger(response.data.message);
@@ -92,12 +89,12 @@ export default {
           .catch(() => {
             this.danger("Error occurred, please try again.");
           });
-      } else this.danger("Please fill all the required fields.");*/
+      } else this.danger("Please fill all the required fields.");
     },
 
     validateForm: function() {
       let error = false;
-      if (this.signInModel.hotelName === "" || this.signInModel.password === "")
+      if (this.signInModel.email === "" || this.signInModel.password === "")
         error = true;
 
       return error;

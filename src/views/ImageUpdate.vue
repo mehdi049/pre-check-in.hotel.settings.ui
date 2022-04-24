@@ -11,179 +11,66 @@
             <!-- date info -->
             <div class="box">
               <h1 class="title is-1">
-                Hotel information
+                Hotel images
               </h1>
 
               <h3 class="has-text-weight-semibold is-size-4 mb-3">
-                General information
+                Hotel logo
               </h3>
               <div class="columns">
                 <div class="column">
-                  <b-field label="Hotel name">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Hotel name"
-                    ></b-input>
-                  </b-field>
-                </div>
-                <div class="column">
-                  <b-field label="Email">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Email"
-                    ></b-input>
-                  </b-field>
-                </div>
-                <div class="column">
-                  <b-field label="Website">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Website"
-                    ></b-input>
-                  </b-field>
+                  <label class="label">Hotel logo</label>
+                  <div class="file">
+                    <label class="file-label">
+                      <input class="file-input" type="file" name="resume" />
+                      <span class="file-cta">
+                        <span class="file-icon">
+                          <font-awesome-icon :icon="['fa', 'upload']" />
+                        </span>
+                        <span class="file-label">
+                          Choose a file…
+                        </span>
+                      </span>
+                    </label>
+                  </div>
                 </div>
               </div>
 
               <h3 class="has-text-weight-semibold is-size-4 mb-3 mt-5">
-                Location
+                Room images
               </h3>
               <div class="columns">
                 <div class="column">
-                  <b-field label="Street">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Street"
-                    ></b-input>
-                  </b-field>
+                  <label class="label">Single room</label>
+                  <div class="file">
+                    <label class="file-label">
+                      <input class="file-input" type="file" name="resume" />
+                      <span class="file-cta">
+                        <span class="file-icon">
+                          <font-awesome-icon :icon="['fa', 'upload']" />
+                        </span>
+                        <span class="file-label">
+                          Choose a file…
+                        </span>
+                      </span>
+                    </label>
+                  </div>
                 </div>
                 <div class="column">
-                  <b-field label="City">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="City"
-                    ></b-input>
-                  </b-field>
-                </div>
-                <div class="column">
-                  <b-field label="Postcode">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Postcode"
-                    ></b-input>
-                  </b-field>
-                </div>
-              </div>
-
-              <h3 class="has-text-weight-semibold is-size-4 mb-3 mt-5">
-                Contact
-              </h3>
-              <div class="columns">
-                <div class="column">
-                  <b-field label="Website">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Email"
-                    ></b-input>
-                  </b-field>
-                </div>
-                <div class="column">
-                  <b-field label="Phone">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Phone"
-                    ></b-input>
-                  </b-field>
-                </div>
-                <div class="column">
-                  <b-field label="Fax">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Fax"
-                    ></b-input>
-                  </b-field>
-                </div>
-              </div>
-
-              <h3 class="has-text-weight-semibold is-size-4 mb-3 mt-5">
-                Social network links
-              </h3>
-              <div class="columns">
-                <div class="column">
-                  <b-field label="Facebook link">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="facebook link"
-                    ></b-input>
-                  </b-field>
-                </div>
-                <div class="column">
-                  <b-field label="Instagram link">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Instagram link"
-                    ></b-input>
-                  </b-field>
-                </div>
-                <div class="column">
-                  <b-field label="Trip advisor link">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Trip advisor link"
-                    ></b-input>
-                  </b-field>
-                </div>
-              </div>
-
-              <h3 class="has-text-weight-semibold is-size-4 mb-3 mt-5">
-                Useful links
-              </h3>
-              <div class="columns">
-                <div class="column">
-                  <b-field label="BBQ fun">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="BBQ fun"
-                    ></b-input>
-                  </b-field>
-                </div>
-                <div class="column">
-                  <b-field label="Picnic basket">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Picnic basket"
-                    ></b-input>
-                  </b-field>
-                </div>
-                <div class="column">
-                  <b-field label="Dining options">
-                    <b-input
-                      type="text"
-                      required="true"
-                      placeholder="Dining options"
-                    ></b-input>
-                  </b-field>
-                </div>
-              </div>
-
-              <div class="columns">
-                <div class="column is-12 has-text-right">
-                  <button class="button is-info">
-                    UPDATE
-                  </button>
+                  <label class="label">Double room</label>
+                  <div class="file">
+                    <label class="file-label">
+                      <input class="file-input" type="file" name="resume" />
+                      <span class="file-cta">
+                        <span class="file-icon">
+                          <font-awesome-icon :icon="['fa', 'upload']" />
+                        </span>
+                        <span class="file-label">
+                          Choose a file…
+                        </span>
+                      </span>
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
@@ -211,6 +98,7 @@ import {
   faExclamationCircle,
   faCheck,
   faArrowDown,
+  faUpload,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -218,6 +106,7 @@ library.add(faArrowRight);
 library.add(faArrowDown);
 library.add(faExclamationCircle);
 library.add(faCheck);
+library.add(faUpload);
 
 export default {
   name: "MyBooking",
