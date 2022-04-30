@@ -6,26 +6,26 @@ export function setHotelSettings(data) {
   return data;
 }
 
-export function refreshBooking() {
-  let _booking = localStorage.getItem("booking");
-  if (_booking !== null) {
-    _booking = JSON.parse(_booking);
-    let reference = _booking.bookingReference;
+export function refreshHotelSettings() {
+  let _hotelSettings = localStorage.getItem("hotelSettings");
+  if (_hotelSettings !== null) {
+    _hotelSettings = JSON.parse(_hotelSettings);
+    let id = _hotelSettings.id;
 
     axios
       .get(
         process.env.VUE_APP_PRECHECKIN_API_ENDPOINT +
-          "/CheckIn/booking/" +
-          reference
+          "/hotelSettings/hotelSettings/" +
+          id
       )
       .then((response) => {
         if (response.data.status === 200) {
-          let _booking = setHotelSettings(response.data.body);
+          let _hotelSettings = setHotelSettings(response.data.body);
           localStorage.setItem(
-            "booking_original",
+            "hotelSettings_original",
             JSON.stringify(response.data.body)
           );
-          localStorage.setItem("booking", JSON.stringify(_booking));
+          localStorage.setItem("hotelSettings", JSON.stringify(_hotelSettings));
         }
       });
   }

@@ -59,8 +59,8 @@ export default {
     return {
       locale: undefined, // Browser locale,
       signInModel: {
-        email: "",
-        password: "",
+        email: "mehdi@gmail.com",
+        password: "mehdi@gmail.com",
       },
     };
   },
