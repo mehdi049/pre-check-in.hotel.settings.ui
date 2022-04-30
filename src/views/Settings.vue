@@ -38,15 +38,6 @@
                     ></b-input>
                   </b-field>
                 </div>
-                <div class="column">
-                  <b-field label="Website">
-                    <b-input
-                      type="url"
-                      placeholder="Website"
-                      v-model="hoteSettings.website"
-                    ></b-input>
-                  </b-field>
-                </div>
               </div>
 
               <h3 class="has-text-weight-semibold is-size-4 mb-3 mt-5">
@@ -238,7 +229,7 @@ export default {
       return functions.differenceInDays(date1, date2);
     },
     update: function() {
-      if (!this.validateForm()) {
+      if (this.validateForm().length === 0) {
         let _hoteSettings = { ...this.hoteSettings };
         this.axios
           .post(
@@ -255,18 +246,46 @@ export default {
           .catch(() => {
             this.danger("Error occurred, please try again.");
           });
-      } else this.danger("Please fill all the required fields.");
+      }
     },
     validateForm: function() {
-      let error = false;
+      let error = "";
       const reg = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+      const regUrl = /(?:http(s)?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-/]))?/;
 
+      if (this.hoteSettings.name === "") error = "Hotel name is required.";
+      if (this.hoteSettings.email === "") error = "Hotel email is required.";
       if (
-        this.hoteSettings.name === "" ||
-        this.hoteSettings.email === "" ||
+        this.hoteSettings.email != "" &&
         !reg.test(this.hoteSettings.email.replace(/\+/gi, "."))
       )
-        error = true;
+        error = "Hotel email is invalid.";
+
+      if (
+        this.hoteSettings.website != "" &&
+        !regUrl.test(this.hoteSettings.website)
+      )
+        error = "Hotel website is invalid.";
+
+      if (
+        this.hoteSettings.facebookLink != "" &&
+        !regUrl.test(this.hoteSettings.facebookLink)
+      )
+        error = "Hotel Facebook link is invalid.";
+
+      if (
+        this.hoteSettings.instagramLink != "" &&
+        !regUrl.test(this.hoteSettings.instagramLink)
+      )
+        error = "Hotel Instagram link is invalid.";
+
+      if (
+        this.hoteSettings.tripAdvisorLink != "" &&
+        !regUrl.test(this.hoteSettings.tripAdvisorLink)
+      )
+        error = "Hotel Trip Adivsor link is invalid.";
+
+      if (error.length > 0) this.danger(error);
 
       return error;
     },

@@ -4,10 +4,15 @@
     <div id="h-menu" class="columns is-mobile">
       <div class="column">
         <router-link to="/settings">
-          <img
-            src="https://cdn3.vectorstock.com/i/1000x1000/88/47/royal-hotel-logo-vector-31948847.jpg"
-            class="image is-48x48"
-          />
+          <span
+            v-if="hoteSettings.hotelImages.logo === null"
+            class="p-2 has-background-dark has-text-white"
+          >
+            {{ hoteSettings.name.substr(0, 1).toUpperCase() }}
+          </span>
+          <span v-if="hoteSettings.hotelImages.logo !== null">
+            logo not null
+          </span>
         </router-link>
       </div>
       <div class="column has-text-right">
@@ -81,9 +86,20 @@ library.add(faUser);
 
 export default {
   name: "TopNavbar",
+  data() {
+    return {
+      hoteSettings: {},
+    };
+  },
+  mounted() {
+    let _hoteSettings = localStorage.getItem("hotelSettings");
+    if (_hoteSettings !== null) this.hoteSettings = JSON.parse(_hoteSettings);
+    else this.$router.push("/");
+  },
   methods: {
     logout: function() {
-      localStorage.removeItem("booking");
+      localStorage.removeItem("hotelSettings_original");
+      localStorage.removeItem("hotelSettings");
       this.$router.push("/");
     },
   },

@@ -109,16 +109,16 @@ library.add(faCheck);
 library.add(faUpload);
 
 export default {
-  name: "MyBooking",
+  name: "ImageUpdate",
   data() {
     return {
-      booking: {},
+      hoteSettings: {},
     };
   },
   mounted() {
-    /* let _booking = localStorage.getItem("booking");
-    if (_booking !== null) this.booking = JSON.parse(_booking);
-    else this.$router.push("/");*/
+    let _hoteSettings = localStorage.getItem("hotelSettings");
+    if (_hoteSettings !== null) this.hoteSettings = JSON.parse(_hoteSettings);
+    else this.$router.push("/");
   },
   methods: {
     dateDifference(date1, date2) {
